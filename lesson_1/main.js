@@ -30,6 +30,9 @@ middleName = 'Petrovych';
 lastName = 'Kapets'
 person = firstName +' '+ middleName +' '+ lastName
 console.log(person);
+//example
+persons = `${firstName} ${middleName} ${lastName}`;
+console.log(persons)
 
 let a = 100;
 let b = '100';
