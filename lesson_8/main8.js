@@ -178,8 +178,6 @@ class Prince extends Shablone{
     }
 }
 
-
-
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
 
     let arrCinderellas = [
@@ -194,10 +192,23 @@ class Prince extends Shablone{
     new Cinderella('Юлія', 26, 40.),
     new Cinderella('Дарина', 31, 45.)
 ]
-let prince = new Prince('Alonso', 23, 36);
-console.log(prince.findPrinces(arrCinderellas));
-console.log('------another way-------')
+let prince = new Prince('Alonso', 23, 42);
+// console.log(prince.findPrinces(arrCinderellas));
+// console.log('------another way-------')
 let prince2 = new Prince('Alonso', 23, 39);
-console.log(prince2.findPrinces2(arrCinderellas));
+// console.log(prince2.findPrinces2(arrCinderellas));
+
+// ------------additional way to resolve---------------
+let result;
+for (const princess of arrCinderellas) {
+    if (princess.footSize === prince.shoesSize){
+        result = princess;
+        break;
+    }
+}
+console.log(`${result.name} it's our princes`);
+let findMethod = arrCinderellas.find((cinderella) => cinderella.footSize === prince.shoesSize);
+console.log(findMethod.name);
+
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 
