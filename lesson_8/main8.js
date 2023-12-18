@@ -147,7 +147,57 @@ class Cars {
 // cars.drive()
 
 // -створити класс/функцію конструктор попелюшка з полями ім'я, вік, розмір ноги. Створити масив з 10 попелюшок.
+class Shablone {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age
+    }
+}
+class Cinderella extends Shablone{
+    constructor(name, age, footSize) {
+        super(name, age)
+        this.footSize = footSize
+    }
+}
+
 // Сторити об'єкт класу "принц" за допомоги класу який має поля ім'я, вік, туфелька яку він знайшов.
+class Prince extends Shablone{
+    constructor(name, age, shoesSize) {
+        super(name, age)
+        this.shoesSize = shoesSize
+    }
+    findPrinces (arr) {
+        for (const princes of arr) {
+            if(princes.footSize === this.shoesSize){
+                return princes;
+            }
+        }
+    }
+    findPrinces2 (arr) {
+       return arr.find((princes) => princes.footSize === this.shoesSize)
+    }
+}
+
+
+
 //     За допомоги циклу знайти яка попелюшка повинна бути з принцом.
+
+    let arrCinderellas = [
+    new Cinderella('Ірина', 28, 38.),
+    new Cinderella('Олександра', 35, 42.),
+    new Cinderella('Христина', 22, 36.),
+    new Cinderella('Марія', 30, 44.),
+    new Cinderella('Анна', 25, 39.),
+    new Cinderella('Сара', 32, 41.),
+    new Cinderella('Катерина', 29, 37.),
+    new Cinderella('Віра', 27, 43.),
+    new Cinderella('Юлія', 26, 40.),
+    new Cinderella('Дарина', 31, 45.)
+]
+let prince = new Prince('Alonso', 23, 36);
+console.log(prince.findPrinces(arrCinderellas));
+console.log('------another way-------')
+let prince2 = new Prince('Alonso', 23, 39);
+console.log(prince2.findPrinces2(arrCinderellas));
 //     Додатково, знайти необхідну попелюшку за допомоги функції масиву find та відповідного колбеку
 
