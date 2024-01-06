@@ -192,14 +192,58 @@
 
 //     - створити інпут який приймає вік людини та кнопку яка підтверджує дію.При натисканні на кнопку зчитати
 //     інформацію з інпуту та перевірити вік чи меньше він ніж 18, та повідомити про це користувача
-//
-//
+// let form = document.forms[0]
+// form.onsubmit = function (e){
+//     e.preventDefault()
+//     let age = this.age.value
+//     if (age < 18){
+//     alert('your age less then 18')
+//     } else {}
+//     alert('Nice, your are adult')
+// }
+
 // *** Створити 3 інпута та кнопку. Один визначає кількість рядків, другий - кількість ячеєк, третій вмиіст ячеєк.
 //     При натисканні кнопки, вся ця інформація зчитується і формується табличка, з відповідним вмістом.
 // (Додатковачастина для завдання)
+// let form = document.forms[0]
+// form.onsubmit = function (e) {
+//     e.preventDefault()
+//     let row = document.getElementById('rowCount').value;
+//     let cell = document.getElementById('cellCount').value;
+//     let content = document.getElementById('content').value;
+//      let tableHtml = '<table style="border: 1px solid black;">';
 //
+//      for (let i = 0; i < row; i++) {
+//          tableHtml += '<tr style="background-color: lightsteelblue; color: #333;">';
+//          for (let n = 0; n < cell; n++) {
+//              tableHtml += '<td style="border: 1px dashed pink">' + content + '</td>';
+//          }
+//          tableHtml += '</tr>';
+//      }
+//      tableHtml += '</table>';
+// document.getElementById('container').innerHTML = tableHtml;
+// }
+
 // *** (подібне було вище, але...будьте уважні в другій частині) створити сторінку з довільним блоком, в середині
 // якого є значення "100грн"
 // при перезавантаженні сторінки до значаення додається по 10грн, але !!!
 //     зміна ціни відбувається тільки на перезавантаження, які відбулись пізніше ніж 10 секунд після попереднього.
 //     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
+
+
+// window.onload = function time() {
+//     console.log('Функція викликається при завантаженні сторінки.');
+//     let currentTime = new Date().getTime();
+//     let reload = localStorage.getItem('reloadSaved');
+//     let div3 = document.getElementById('div3');
+//
+//     if (!reload){
+//         localStorage.setItem('reloadSaved', JSON.stringify(currentTime));
+//     } else if(currentTime - parseInt(reload) > 10000) {
+//         let currentPrice = parseInt(div3.innerText);
+//         let newPrice = currentPrice + 10;
+//         div3.innerText = newPrice.toString() + 'грн'
+//
+//         localStorage.setItem('reloadSaved', JSON.stringify(currentTime));
+//     }
+// }
