@@ -231,19 +231,16 @@
 //     При перезавантаженні, яке відбулось раніше ніж минуло 10 секунд - нічого не відбувається
 
 
-// window.onload = function time() {
-//     console.log('Функція викликається при завантаженні сторінки.');
-//     let currentTime = new Date().getTime();
-//     let reload = localStorage.getItem('reloadSaved');
-//     let div3 = document.getElementById('div3');
-//
-//     if (!reload){
-//         localStorage.setItem('reloadSaved', JSON.stringify(currentTime));
-//     } else if(currentTime - parseInt(reload) > 10000) {
-//         let currentPrice = parseInt(div3.innerText);
-//         let newPrice = currentPrice + 10;
-//         div3.innerText = newPrice.toString() + 'грн'
-//
-//         localStorage.setItem('reloadSaved', JSON.stringify(currentTime));
-//     }
-// }
+const block = document.getElementById('div3');
+
+const currentDate =  new Date().getTime();
+const date = Number(localStorage.getItem('lastRefresh')) || currentDate;
+let count  =  Number(localStorage.getItem('count')) || 100;
+
+if  (currentDate - date > 1000) {
+    count += 10;
+    localStorage.setItem('count', count);
+}
+
+localStorage.setItem('lastRefresh', currentDate.toString());
+block.innerText = `${count}грн`;
