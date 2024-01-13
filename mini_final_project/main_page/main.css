@@ -1,0 +1,38 @@
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+#content{
+    width: 40vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.userDiv {
+    width: 18vw;
+    height: 10vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #FDF5E9;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-top: 10px;
+    font-size: 1em;
+    padding: 5px;
+}
+.butGrid{
+    width: 50%;
+    height: 40%;
+    border: 1px solid peachpuff;
+    border-radius: 20px;
+    background: linear-gradient(to right, #FDFCFB,#E2D1C3);
+    font-size: 0.8em;
+}
+.butGrid:active{
+    background: linear-gradient(to right,#E2D1C3, #FDFCFB);
+}

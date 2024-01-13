@@ -9,22 +9,34 @@ let getId = async () => {
 void getId()
 
 let button = document.getElementById('buttonBlock');
+let flag = false;
 button.onclick = async () => {
-    let link = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
-        .then(res => res.json());
+    if (!flag) {
+        let link = await fetch(`https://jsonplaceholder.typicode.com/users/${userId}/posts`)
+            .then(res => res.json());
 
-    let postTitle = document.getElementById('postTittle');
-    link.forEach(post =>{
-        let blockForPost = document.createElement('div');
-        blockForPost.innerHTML = post.title;
+        let postTitle = document.getElementById('postTittle');
+        postTitle.innerText = '';
 
-        let buttonForPost = document.createElement('button');
-        buttonForPost.innerHTML = 'Details about post'
-        buttonForPost.onclick = () =>{
-            location.href = `../third_page/post-details.html?postId=${post.id}`
-        }
+        link.forEach(post => {
+            let blockForPost = document.createElement('div');
+            blockForPost.classList.add('blockForPost')
+            blockForPost.innerHTML = post.title;
 
-        blockForPost.append(buttonForPost);
-        postTitle.append(blockForPost);
-    })
+            let buttonForPost = document.createElement('button');
+            buttonForPost.classList.add('buttForPost')
+            buttonForPost.innerHTML = 'Details about post'
+            buttonForPost.onclick = () => {
+                location.href = `../third_page/post-details.html?postId=${post.id}`
+            }
+
+            blockForPost.append(buttonForPost);
+            postTitle.append(blockForPost);
+        })
+        flag = true;
+    } else {
+        let postTitle = document.getElementById('postTittle');
+        postTitle.innerText = '';
+        flag = false;
+    }
 }

@@ -1,0 +1,61 @@
+body{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+#postContent{
+    width: 25vw;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #A1C4FD, #C2E9FB);
+}
+#buttonBlock{
+    width: 90vw;
+    height: 10vh;
+    border: 1px;
+    border-radius: 20px;
+    background: linear-gradient(to right, #93A5CF, #E4EfE9);
+    font-size: 1em;
+}
+#buttonBlock:active{
+    background: linear-gradient(to right, #E4EfE9, #93A5CF);
+}
+#postTittle{
+    width: 80vw;
+    height: 40vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.blockForPost{
+    width: 18%;
+    height: 40%;
+    border: 1px solid black;
+    border-radius: 4px;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    background: #cbcbcb;
+    padding: 4px;
+    position: relative;
+}
+.buttForPost{
+    width: 70%;
+    height: 40%;
+    border: 1px solid peachpuff;
+    border-radius: 20px;
+    background: linear-gradient(to right, #dfe5f3, #ffffff);
+    font-size: 0.8em;
+    margin-top: 5px;
+    position: absolute;
+    bottom: 3px;
+}
+.buttForPost:active{
+    background: linear-gradient(to right, #ffffff, #dfe5f3);
+}

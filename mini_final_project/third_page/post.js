@@ -8,16 +8,17 @@ let getPostId = async () => {
 }
 void getPostId()
 
-let allComments = async ()=> {
+let allComments = async () => {
     let commentsInfo = await fetch(`https://jsonplaceholder.typicode.com/posts/${postId}/comments`)
-        .then(res=> res.json());
+        .then(res => res.json());
 
-    let comments =  document.getElementById('comments')
+    let comments = document.getElementById('comments')
 
-    commentsInfo.forEach(comment =>{
-        let block = document.createElement('div')
-        comments.append(block)
-        recurs(comment,comments)
+    commentsInfo.forEach(comment => {
+        let coment = document.createElement('div');
+        coment.classList.add('coment')
+        comments.append(coment)
+        recurs(comment, coment)
     })
 }
 void allComments()
