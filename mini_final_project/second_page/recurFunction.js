@@ -5,6 +5,7 @@ function recurs(response, elementHTML){
         let liElement = document.createElement('li');
 
         if (typeof response[argument] === 'object'){
+            liElement.innerText = `${argument} :`
             recurs(response[argument], liElement);
         }else {
             liElement.innerHTML = argument + ': ' + response[argument];
