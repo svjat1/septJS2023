@@ -21,7 +21,7 @@ button.onclick = async () => {
         link.forEach(post => {
             let blockForPost = document.createElement('div');
             blockForPost.classList.add('blockForPost')
-            blockForPost.innerHTML = post.title;
+            blockForPost.innerHTML = `Title : ${post.title}`;
 
             let buttonForPost = document.createElement('button');
             buttonForPost.classList.add('buttForPost')
